@@ -77,20 +77,21 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <ol>
-        {
-          this.state.quizData.map((item, index) => {
-            return (
-              
+        <form className='quiz-form'>
+          <ol>
+          {
+            this.state.quizData.map((item, index) => {
+              return (
                 <QuestionForm 
                   question={item.question} 
                   answers={item.answers} 
                   key={index} 
-                />
-            )
-          })
-        }
-        </ol>
+                  />
+              )
+            })
+          }
+          </ol>
+        </form>
       </div>
     );
   }

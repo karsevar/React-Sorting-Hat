@@ -5,17 +5,17 @@ const QuestionForm = props => {
     return (
         <div className='question-container'>
             <strong>{props.question}</strong>
-            <ul>
-                <li>
-                    {props.answers.map(answer => {
-                        return (
-                            <label>
+            <ul className='answer-field'>
+                {props.answers.map(answer => {
+                    return (
+                        <li>
+                             <label>
                                 <input type='radio' value='idea' />
                                 {answer} 
                             </label>
+                        </li>
                         )
                     })}
-                </li>
             </ul>
         </div>
     )
