@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import QuestionForm from './components/QuestionForm';
+
 class App extends Component {
   constructor() {
     super();
-    
+
     this.state = {
       quizData: [
         {
@@ -68,9 +70,27 @@ class App extends Component {
 
   }
   render() {
+    {
+      this.state.quizData.forEach(quiz => {
+        console.log(quiz.question);
+      })
+    }
     return (
       <div className="App">
-        
+        <ol>
+        {
+          this.state.quizData.map((item, index) => {
+            return (
+              
+                <QuestionForm 
+                  question={item.question} 
+                  answers={item.answers} 
+                  key={index} 
+                />
+            )
+          })
+        }
+        </ol>
       </div>
     );
   }
